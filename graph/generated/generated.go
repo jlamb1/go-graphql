@@ -250,7 +250,7 @@ func (ec *executionContext) field_Mutation_createVideo_args(ctx context.Context,
 	args := map[string]interface{}{}
 	var arg0 model.NewVideo
 	if tmp, ok := rawArgs["input"]; ok {
-		arg0, err = ec.unmarshalNNewVideo2githubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐNewVideo(ctx, tmp)
+		arg0, err = ec.unmarshalNNewVideo2githubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐNewVideo(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -347,7 +347,7 @@ func (ec *executionContext) _Mutation_createVideo(ctx context.Context, field gra
 	}
 	res := resTmp.(*model.Video)
 	fc.Result = res
-	return ec.marshalNVideo2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐVideo(ctx, field.Selections, res)
+	return ec.marshalNVideo2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐVideo(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) _Query_videos(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
@@ -381,7 +381,7 @@ func (ec *executionContext) _Query_videos(ctx context.Context, field graphql.Col
 	}
 	res := resTmp.([]*model.Video)
 	fc.Result = res
-	return ec.marshalNVideo2ᚕᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐVideoᚄ(ctx, field.Selections, res)
+	return ec.marshalNVideo2ᚕᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐVideoᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) _Query___type(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
@@ -654,7 +654,7 @@ func (ec *executionContext) _Video_author(ctx context.Context, field graphql.Col
 	}
 	res := resTmp.(*model.User)
 	fc.Result = res
-	return ec.marshalNUser2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
+	return ec.marshalNUser2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐUser(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) ___Directive_name(ctx context.Context, field graphql.CollectedField, obj *introspection.Directive) (ret graphql.Marshaler) {
@@ -2172,7 +2172,7 @@ func (ec *executionContext) marshalNID2string(ctx context.Context, sel ast.Selec
 	return res
 }
 
-func (ec *executionContext) unmarshalNNewVideo2githubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐNewVideo(ctx context.Context, v interface{}) (model.NewVideo, error) {
+func (ec *executionContext) unmarshalNNewVideo2githubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐNewVideo(ctx context.Context, v interface{}) (model.NewVideo, error) {
 	return ec.unmarshalInputNewVideo(ctx, v)
 }
 
@@ -2190,11 +2190,11 @@ func (ec *executionContext) marshalNString2string(ctx context.Context, sel ast.S
 	return res
 }
 
-func (ec *executionContext) marshalNUser2githubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2githubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v model.User) graphql.Marshaler {
 	return ec._User(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "must not be null")
@@ -2204,11 +2204,11 @@ func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphql
 	return ec._User(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNVideo2githubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐVideo(ctx context.Context, sel ast.SelectionSet, v model.Video) graphql.Marshaler {
+func (ec *executionContext) marshalNVideo2githubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐVideo(ctx context.Context, sel ast.SelectionSet, v model.Video) graphql.Marshaler {
 	return ec._Video(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNVideo2ᚕᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐVideoᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Video) graphql.Marshaler {
+func (ec *executionContext) marshalNVideo2ᚕᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐVideoᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Video) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -2232,7 +2232,7 @@ func (ec *executionContext) marshalNVideo2ᚕᚖgithubᚗcomᚋjlamb1ᚋgoᚑgra
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNVideo2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐVideo(ctx, sel, v[i])
+			ret[i] = ec.marshalNVideo2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐVideo(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -2245,7 +2245,7 @@ func (ec *executionContext) marshalNVideo2ᚕᚖgithubᚗcomᚋjlamb1ᚋgoᚑgra
 	return ret
 }
 
-func (ec *executionContext) marshalNVideo2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋmᚋv2ᚋgraphᚋmodelᚐVideo(ctx context.Context, sel ast.SelectionSet, v *model.Video) graphql.Marshaler {
+func (ec *executionContext) marshalNVideo2ᚖgithubᚗcomᚋjlamb1ᚋgoᚑgraphqlᚋgraphᚋmodelᚐVideo(ctx context.Context, sel ast.SelectionSet, v *model.Video) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "must not be null")
