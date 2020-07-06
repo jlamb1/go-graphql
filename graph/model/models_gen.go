@@ -2,20 +2,22 @@
 
 package model
 
-type NewVideo struct {
+type BlogPost struct {
+	ID     string `json:"id" bson:"_id"`
+	Title  string `json:"title" bson:"title"`
+	URL    string `json:"url" bson:"url"`
+	Author *User  `json:"author" bson:"author"`
+	Body   string `json:"body" bson:"body"`
+}
+
+type NewBlogPost struct {
 	Title  string `json:"title" bson:"title"`
 	URL    string `json:"url" bson:"url"`
 	UserID string `json:"userID" bson:"userID"`
+	Body   string `json:"body" bson:"body"`
 }
 
 type User struct {
 	ID   string `json:"id" bson:"_id"`
 	Name string `json:"name" bson:"name"`
-}
-
-type Video struct {
-	ID     string `json:"id" bson:"_id"`
-	Title  string `json:"title" bson:"title"`
-	URL    string `json:"url" bson:"url"`
-	Author *User  `json:"author" bson:"author"`
 }

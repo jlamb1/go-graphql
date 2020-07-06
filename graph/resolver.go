@@ -6,5 +6,5 @@ import "github.com/jlamb1/go-graphql/graph/model"
 
 //Resolver default setup
 type Resolver struct {
-	videos []*model.Video
+	blogPosts []*model.BlogPost
 }

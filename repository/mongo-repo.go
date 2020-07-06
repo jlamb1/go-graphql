@@ -12,9 +12,9 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-type VideoRepository interface {
-	Save(video *model.Video)
-	FindAll() []*model.Video
+type BlogRepository interface {
+	Save(blogPost *model.BlogPost)
+	FindAll() []*model.BlogPost
 }
 
 type database struct {
@@ -23,10 +23,10 @@ type database struct {
 
 const (
 	DATABASE   = "gograph"
-	COLLECTION = "videos"
+	COLLECTION = "blog"
 )
 
-func New() VideoRepository {
+func New() BlogRepository {
 
 	MONGODB := "mongodb://root:example@localhost:27017"
 
@@ -48,24 +48,24 @@ func New() VideoRepository {
 	}
 }
 
-func (db *database) Save(video *model.Video) {
+func (db *database) Save(blogPost *model.BlogPost) {
 	collection := db.client.Database(DATABASE).Collection(COLLECTION)
-	_, err := collection.InsertOne(context.TODO(), video)
+	_, err := collection.InsertOne(context.TODO(), blogPost)
 	if err != nil {
 		log.Fatal(err)
 	}
 }
 
-func (db *database) FindAll() []*model.Video {
+func (db *database) FindAll() []*model.BlogPost {
 	collection := db.client.Database(DATABASE).Collection(COLLECTION)
 	cursor, err := collection.Find(context.TODO(), bson.D{})
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer cursor.Close(context.TODO())
-	var result []*model.Video
+	var result []*model.BlogPost
 	for cursor.Next(context.TODO()) {
-		var v *model.Video
+		var v *model.BlogPost
 		err := cursor.Decode(&v)
 		if err != nil {
 			log.Fatal(err)

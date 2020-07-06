@@ -14,20 +14,21 @@ import (
 	"github.com/jlamb1/go-graphql/repository"
 )
 
-func (r *mutationResolver) CreateVideo(ctx context.Context, input model.NewVideo) (*model.Video, error) {
+func (r *mutationResolver) CreateBlogPost(ctx context.Context, input model.NewBlogPost) (*model.BlogPost, error) {
 	rand.Seed(time.Now().UnixNano())
-	video := &model.Video{
+	blogPost := &model.BlogPost{
 		ID:     strconv.Itoa(rand.Int()),
 		Title:  input.Title,
 		URL:    input.URL,
 		Author: &model.User{ID: input.UserID, Name: "user " + input.UserID},
+		Body:   input.Body,
 	}
-	videoRepo.Save(video)
-	return video, nil
+	blogPostRepo.Save(blogPost)
+	return blogPost, nil
 }
 
-func (r *queryResolver) Videos(ctx context.Context) ([]*model.Video, error) {
-	return videoRepo.FindAll(), nil
+func (r *queryResolver) BlogPosts(ctx context.Context) ([]*model.BlogPost, error) {
+	return blogPostRepo.FindAll(), nil
 }
 
 // Mutation returns generated.MutationResolver implementation.
@@ -45,4 +46,4 @@ type queryResolver struct{ *Resolver }
 //  - When renaming or deleting a resolver the old code will be put in here. You can safely delete
 //    it when you're done.
 //  - You have helper methods in this file. Move them out to keep these resolver files clean.
-var videoRepo repository.VideoRepository = repository.New()
+var blogPostRepo repository.BlogRepository = repository.New()
